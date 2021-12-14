@@ -13,6 +13,8 @@ const KEY_F2 = 113;
 const KEY_ENTER = 13;
 const KEY_TAB = 9;
 const KEY_ESC = 27;
+const KEY_LEFT = 37;
+const KEY_RIGHT = 39;
 
 export const BasicCellEditor = forwardRef<ICellEditor, ICellEditorParams>(
   (props, ref) => {
@@ -50,7 +52,7 @@ export const BasicCellEditor = forwardRef<ICellEditor, ICellEditorParams>(
     const refInput = useRef<HTMLInputElement>(null);
 
     const isLeftOrRight = (event: React.KeyboardEvent<HTMLInputElement>) => {
-      return [37, 39].indexOf(event.keyCode) > -1;
+      return [KEY_LEFT, KEY_RIGHT].indexOf(event.keyCode) > -1;
     };
 
     const getCharCodeFromEvent = (
